@@ -54,17 +54,25 @@ export default {
     }
   },
   methods: {
+
+    buscarDados(){
+    axios.get('https://sheetdb.io/api/v1/87jz1jtmjtrf6').then(({data}) => {
+      this.times = data
+    })
+  },
     salvar(){
       axios.post(
         'https://sheetdb.io/api/v1/87jz1jtmjtrf6',
         {data: [this.time]}
       )
+      this.buscarDados();
     }
   },
+  beforeUpdated(){
+
+  },
   mounted() {
-    axios.get('https://sheetdb.io/api/v1/87jz1jtmjtrf6').then(({data}) => {
-      this.times = data
-    })
+   this.buscarDados();
   }
 }
 </script>
