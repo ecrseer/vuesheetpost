@@ -1,4 +1,3 @@
-
 <template>
   <div class="col-12">
     <label :for="nome" class="form-label">{{ nome }}</label>
@@ -25,5 +24,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
