@@ -77,9 +77,11 @@ export default {
       axios.post(
           'https://sheetdb.io/api/v1/87jz1jtmjtrf6',
           {data: [this.time]}
-      )
-      this.limparCampos()
-      this.buscarDados();
+      ).then(()=>
+          this.limparCampos()
+      ).then(()=>
+          this.buscarDados()    )
+
     }
   },
   beforeUpdated(){
