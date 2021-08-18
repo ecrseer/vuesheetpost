@@ -4,6 +4,7 @@
   <div>
     <ul>
       <li v-for="time in times">{{ time.nome }}</li>
+
     </ul>
   </div>
 
@@ -24,8 +25,9 @@
 
 <script>
 // todo:
-// atualizar lista superior
-// limpar campos depois de salvar
+// x atualizar lista superior
+// x limpar campos depois de salvar
+
 // estados como drop-down
 // torcida tem q ser do tipo number
 // fundacao do tipo number
@@ -37,6 +39,7 @@
 
 import Campo from './components/Campo.vue'
 import axios from 'axios'
+
 export default {
   components: {Campo},
   data() {
@@ -56,13 +59,13 @@ export default {
   },
   methods: {
 
-    buscarDados(){
-    axios.get('https://sheetdb.io/api/v1/87jz1jtmjtrf6').then(({data}) => {
-      this.times = data
-    })
-  },
-    limparCampos(){
-      this.time={
+    buscarDados() {
+      axios.get(import.meta.env.VITE_TABELA_GJ).then(({data}) => {
+        this.times = data
+      })
+    },
+    limparCampos() {
+      this.time = {
         'id': 'INCREMENT',
         'nome': '',
         'estado': '',
@@ -73,22 +76,23 @@ export default {
       }
     },
 
-    salvar(){
+    salvar() {
       axios.post(
-          'https://sheetdb.io/api/v1/87jz1jtmjtrf6',
+          import.meta.env.VITE_TABELA_GJ,
           {data: [this.time]}
-      ).then(()=>
+      ).then(() =>
           this.limparCampos()
-      ).then(()=>
-          this.buscarDados()    )
+      ).then(() =>
+          this.buscarDados())
 
     }
   },
-  beforeUpdated(){
+  beforeUpdated() {
 
   },
   mounted() {
-   this.buscarDados();
+    console.log('')
+    this.buscarDados();
 
   }
 }
