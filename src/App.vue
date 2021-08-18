@@ -41,6 +41,7 @@ export default {
   components: {Campo},
   data() {
     return {
+
       time: {
         'id': 'INCREMENT',
         'nome': '',
@@ -60,11 +61,24 @@ export default {
       this.times = data
     })
   },
+    limparCampos(){
+      this.time={
+        'id': 'INCREMENT',
+        'nome': '',
+        'estado': '',
+        'tecnico': '',
+        'torcida': '',
+        'fundacao_ano': '',
+        'info': ''
+      }
+    },
+
     salvar(){
       axios.post(
-        'https://sheetdb.io/api/v1/87jz1jtmjtrf6',
-        {data: [this.time]}
+          'https://sheetdb.io/api/v1/87jz1jtmjtrf6',
+          {data: [this.time]}
       )
+      this.limparCampos()
       this.buscarDados();
     }
   },
@@ -73,6 +87,7 @@ export default {
   },
   mounted() {
    this.buscarDados();
+
   }
 }
 </script>
