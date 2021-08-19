@@ -1,5 +1,5 @@
 <template>
-  <div class="col-6">
+  <div class="col-11">
     <label :for="nome" class="form-label">{{ nome }}</label>
     <input v-bind:type="tipocampo"
            class="form-control"

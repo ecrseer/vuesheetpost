@@ -4,7 +4,9 @@
     <label v-bind:for="nomecampo" class="form-label"></label>
     <select v-bind:id="nomecampo"
         class="form-select" @input="$emit('input', $event.target.value)">
-      <option v-for="estado in estados" :value="estado">{{ estado }}</option>
+      <option v-for="estado in estados" :value="estado"
+              v-on:click="setDropDownNoTexto($event.target.value)"
+      >{{ estado }}</option>
     </select>
   </div>
 </template>
@@ -25,8 +27,8 @@ export default {
     }
   },
   methods:{
-    input(){
-      console.log('inputou')
+    setDropDownNoTexto(valor){
+      console.log(valor)
     }
   }
 }
