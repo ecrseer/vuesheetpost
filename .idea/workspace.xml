@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ad27745-7a7d-4f8e-a9e8-dfa7a75d5b2d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CardTime.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TabelaTimes.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CampoTextArea.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Campo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Campo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CampoSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampoSelect.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -43,6 +44,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -61,12 +64,23 @@
       <updated>1629297911601</updated>
       <workItem from="1629297912949" duration="1337000" />
       <workItem from="1629311866131" duration="12876000" />
-      <workItem from="1629385668678" duration="852000" />
+      <workItem from="1629385668678" duration="4267000" />
+      <workItem from="1629400123610" duration="1198000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

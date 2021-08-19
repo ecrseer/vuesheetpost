@@ -23,6 +23,11 @@ export default {
     return{
       valores:['d','a']
     }
+  },
+  methods:{
+    input(){
+      console.log('inputou')
+    }
   }
 }
 </script>
