@@ -21,6 +21,7 @@
     ></CampoSelect>
     <v-btn block  color="secondary" @click="salvar">salvar</v-btn>
   </section>
+  <FormularioCadastro v-bind:timeprop="time" v-bind:salvarprop="salvar"></FormularioCadastro>
 </div>
 
 </template>
@@ -46,10 +47,12 @@ import axios from 'axios'
 import TabelaTimes from "../components/TabelaTimes.vue";
 import CampoSelect from "../components/CampoSelect.vue";
 import CampoTextArea from "../components/CampoTextArea.vue";
+import FormularioCadastro from "../components/FormularioCadastro.vue";
 
 export default {
   name:'index',
-  components: {CampoSelect, TabelaTimes,
+  components: {
+    FormularioCadastro, CampoSelect, TabelaTimes,
     Campo, CampoTextArea},
   data() {
     return {

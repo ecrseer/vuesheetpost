@@ -1,19 +1,17 @@
 <template>
   <section>
 
-    <Campo v-bind:tipocampo="'text'" nome="nome" v-model="time.nome"></Campo>
-    <Campo v-bind:tipocampo="'text'" nome="estado" v-model="time.estado"></Campo>
-    <Campo v-bind:tipocampo="'text'" nome="tecnico" v-model="time.tecnico"></Campo>
-    <Campo v-bind:tipocampo="'number'" nome="torcida" v-model="time.torcida"></Campo>
-    <Campo v-bind:tipocampo="'number'" nome="fundacao" v-model="time.fundacao_ano"></Campo>
-    <CampoTextArea nome="info" v-model="time.info"></CampoTextArea>
+    <Campo v-bind:tipocampo="'text'" nome="nome" v-model="timeprop.nome"></Campo>
+    <Campo v-bind:tipocampo="'text'" nome="estado" v-model="timeprop.estado"></Campo>
+    <Campo v-bind:tipocampo="'text'" nome="tecnico" v-model="timeprop.tecnico"></Campo>
+    <Campo v-bind:tipocampo="'number'" nome="torcida" v-model="timeprop.torcida"></Campo>
+    <Campo v-bind:tipocampo="'number'" nome="fundacao" v-model="timeprop.fundacao_ano"></Campo>
+    <CampoTextArea nome="info" v-model="timeprop.info"></CampoTextArea>
     <CampoSelect
-        v-bind:estados="estadodropdown"
         nomecampo="estadoD"
-        v-model="estadodropdown"
-        v-on:update:modelValue="estado=$event.target.value"
+        v-model="timeprop.estado"
     ></CampoSelect>
-    <v-btn block  color="secondary" @click="salvar">salvar</v-btn>
+    <v-btn block  color="secondary" v-on:click="salvarprop">salvar</v-btn>
   </section>
 </template>
 
@@ -25,7 +23,12 @@ import CampoTextArea from "../components/CampoTextArea.vue";
 
 export default {
   name: "FormularioCadastro",
-  components:{Campo, CampoTextArea, CampoSelect}
+  components:{Campo, CampoTextArea, CampoSelect},
+  props:{
+    timeprop:Object,
+    salvarprop:Function
+  },
+
 }
 </script>
 
