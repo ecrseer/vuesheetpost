@@ -1,6 +1,8 @@
 <template>
   <h3>Times</h3>
 
+
+
   <div>
     <ul>
       <li v-for="time in times">{{ time.nome }}</li>
@@ -8,6 +10,7 @@
     </ul>
   </div>
 
+<TabelaTimes v-bind:timesprop="times"></TabelaTimes>
   <div>
 
     <Campo nome="nome" v-model="time.nome"></Campo>
@@ -16,7 +19,7 @@
     <Campo nome="torcida" v-model="time.torcida"></Campo>
     <Campo nome="fundacao" v-model="time.fundacao_ano"></Campo>
     <Campo nome="info" v-model="time.info"></Campo>
-
+    <CampoSelect nomecampo="MATRIX"></CampoSelect>
     <button @click="salvar">salvar</button>
   </div>
 
@@ -40,12 +43,14 @@
 import Campo from '../components/Campo.vue'
 import axios from 'axios'
 
+import TabelaTimes from "../components/TabelaTimes.vue";
+import CampoSelect from "../components/CampoSelect.vue";
+
 export default {
   name:'index',
-  components: {Campo},
+  components: {CampoSelect, TabelaTimes, Campo},
   data() {
     return {
-
       time: {
         'id': 'INCREMENT',
         'nome': '',
@@ -101,5 +106,6 @@ export default {
 
 <style>
 
+@import "../styles/global.css";
 
 </style>

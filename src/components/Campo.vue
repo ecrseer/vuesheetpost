@@ -19,6 +19,11 @@ export default {
     atualizar(){
       this.$emit('bombom')
     }
+  },
+  data:()=>{
+    return{
+      mock:'nono'
+    }
   }
 }
 </script>
