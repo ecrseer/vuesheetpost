@@ -5,7 +5,8 @@
   <section>
     <TabelaTimes v-bind:timesprop="times" v-bind:editarcardfunction="this.salvar"></TabelaTimes>
   </section>
-  <FormularioCadastro v-bind:timeprop="timeprop" v-bind:salvarprop="salvar"></FormularioCadastro>
+
+  <FormularioCadastro v-bind:timeprop="times" v-bind:salvarprop="salvar"></FormularioCadastro>
 </div>
 
 </template>

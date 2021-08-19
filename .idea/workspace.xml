@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35c55f6c-8a9a-4015-b292-cf5183c7352d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Campo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Campo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CampoSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampoSelect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardTime.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +47,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629403317464</updated>
-      <workItem from="1629403318751" duration="8840000" />
+      <workItem from="1629403318751" duration="9171000" />
     </task>
     <servers />
   </component>
