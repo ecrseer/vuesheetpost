@@ -2,7 +2,6 @@
   <div>
     <v-card
         max-width="475"
-        class="mx-auto"
     >
       <CardTime v-for="timeobj in timesprop" v-bind:key="timeobj.id"
                 v-bind:timeprop="timeobj"></CardTime>

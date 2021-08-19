@@ -1,17 +1,11 @@
 <template>
-  <h3>Times</h3>
 
+<div>
 
-
-  <div>
-    <ul>
-      <li v-for="time in times">{{ time.nome }}</li>
-
-    </ul>
-  </div>
-
-<TabelaTimes v-bind:timesprop="times"></TabelaTimes>
-  <div>
+  <section>
+    <TabelaTimes v-bind:timesprop="times"></TabelaTimes>
+  </section>
+  <section>
 
     <Campo nome="nome" v-model="time.nome"></Campo>
     <Campo nome="estado" v-model="time.estado"></Campo>
@@ -19,9 +13,13 @@
     <Campo nome="torcida" v-model="time.torcida"></Campo>
     <Campo nome="fundacao" v-model="time.fundacao_ano"></Campo>
     <Campo nome="info" v-model="time.info"></Campo>
-    <CampoSelect nomecampo="MATRIX"></CampoSelect>
-    <button @click="salvar">salvar</button>
-  </div>
+    <CampoSelect
+        v-bind:estados="estadodropdown"
+        nomecampo="estadoD"
+        v-model="estadodropdown"></CampoSelect>
+    <v-btn block  color="secondary" @click="salvar">salvar</v-btn>
+  </section>
+</div>
 
 </template>
 
@@ -60,6 +58,7 @@ export default {
         'fundacao_ano': '',
         'info': ''
       },
+      estadodropdown:['RH','RJ'],
       times: []
     }
   },

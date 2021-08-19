@@ -4,7 +4,7 @@
     <label v-bind:for="nomecampo" class="form-label"></label>
     <select v-bind:id="nomecampo"
         class="form-select" @input="$emit('input', $event.target.value)">
-      <option v-for="valor in valores" :value="valor">{{ valor }}</option>
+      <option v-for="estado in estados" :value="estado">{{ estado }}</option>
     </select>
   </div>
 </template>
@@ -14,11 +14,13 @@ export default {
   name: "CampoSelect",
   props:{
     nomecampo:String,
+    value:String,
+    estados:{type:Array,
+      default:()=>['um','dois']},
+
   },
   data:()=>{
     return{
-      valoresd:{type:Array,
-        default:()=>['um','dois']},
       valores:['d','a']
     }
   }
