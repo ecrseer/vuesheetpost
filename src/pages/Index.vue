@@ -17,7 +17,7 @@
         v-bind:estados="estadodropdown"
         nomecampo="estadoD"
         v-model="estadodropdown"
-        v-bind:value="time.estado"
+        v-on:update:modelValue="time.estado=$event.target.value"
     ></CampoSelect>
     <v-btn block  color="secondary" @click="salvar">salvar</v-btn>
   </section>
@@ -31,12 +31,12 @@
 // x atualizar lista superior
 // x limpar campos depois de salvar
 
-// estados como drop-down
+//1/2 estados como drop-down
 //x torcida tem q ser do tipo number
 //x fundacao do tipo number
 //x info tem q ser um textarea
 
-// transformar a listagem de times em uma tabela
+//1/2 transformar a listagem de times em uma tabela
 
 // editar um time
 
