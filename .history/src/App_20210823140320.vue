@@ -1,7 +1,7 @@
 <template>
   <h3>Times</h3>
   <div>
-    <!-- <table>
+    <table>
       <thead>
       <tr>
         <th>Nome</th>
@@ -27,7 +27,7 @@
         </td>
       </tr>
       </tbody>
-    </table> -->
+    </table>
     <TabelaMarota v-bind:lista="times"></TabelaMarota>
   </div>
 

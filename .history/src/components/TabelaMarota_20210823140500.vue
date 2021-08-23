@@ -15,9 +15,9 @@
       <td v-for="(atributo,key) in item" v-bind:key="key">
         {{ atributo }}
       </td>
-      <!-- iterou por todos atributos de um item só -->
+      <!-- apos -->
        <td>
-          <button @click="editar(item)">editar</button>
+          <button @click="editar(time)">editar</button>
         </td>
         <td>
           <span v-if="carregando">carregando</span>
