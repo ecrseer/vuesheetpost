@@ -8,7 +8,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr v-for="item in lista" v-bind:key="item">
+    <tr v-for="item in lista">
       <td v-for="(atributo,key) in item" v-bind:key="key">
         {{ atributo }}
       </td>

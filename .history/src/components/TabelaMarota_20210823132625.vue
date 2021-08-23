@@ -2,14 +2,14 @@
   <table>
     <thead>
     <tr >
-      <th v-for="(atributo,key) in lista[0]" v-bind:key="key">
+      <th v-for="(atributo,key) in lista[0]">
         {{ key }}</th>
 
     </tr>
     </thead>
     <tbody>
-    <tr v-for="item in lista" v-bind:key="item">
-      <td v-for="(atributo,key) in item" v-bind:key="key">
+    <tr v-for="item in lista">
+      <td v-for="(atributo,key) in item" v-bind="">
         {{ atributo }}
       </td>
     </tr>
