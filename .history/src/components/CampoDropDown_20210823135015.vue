@@ -1,5 +1,6 @@
 <template>
-  <div class="col-12"> 
+  <div class="col-12">
+    <p>dropzao</p>
     <label :for="nome" class="form-label">{{ nome }}</label>
     <select
       class="form-control"

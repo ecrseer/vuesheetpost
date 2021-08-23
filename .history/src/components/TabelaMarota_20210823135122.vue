@@ -1,5 +1,5 @@
 <template>
-  <table class="table table-hover" v-bind:class="table-hover">
+  <table  class="table table-hover" >
     
     <thead>
       

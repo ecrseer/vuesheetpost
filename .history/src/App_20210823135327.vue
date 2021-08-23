@@ -98,7 +98,7 @@ export default {
       this.carregando = true
       if (this.editando) {
         axios.put(
-            `https://sheetdb.io/api/v1/${import.env}/id/${this.time.id}`,
+            `https://sheetdb.io/api/v1/87jz1jtmjtrf6/id/${this.time.id}`,
             {data: [this.time]}
         ).then(() => {
           Object.assign(this.editando, this.time)
@@ -108,7 +108,7 @@ export default {
         })
       } else {
         axios.post(
-            `https://sheetdb.io/api/v1/${import.env}`,
+            `https://sheetdb.io/api/v1/87jz1jtmjtrf6`,
             {data: [this.time]}
         ).then(() => {
           this.times.push(this.time)
@@ -119,7 +119,7 @@ export default {
     },
     apagar(time, index) {
       this.carregando = true
-      axios.delete(`https://sheetdb.io/api/v1/${import.env}/id/${time.id}`).then(() => {
+      axios.delete(`https://sheetdb.io/api/v1/87jz1jtmjtrf6/id/${time.id}`).then(() => {
         this.times.splice(index, 1)
         this.carregando = false
       })
@@ -131,7 +131,7 @@ export default {
   },
   mounted() {
     this.carregando = true
-    axios.get(`https://sheetdb.io/api/v1/${import.env}`).then(({data}) => {
+    axios.get(`https://sheetdb.io/api/v1/87jz1jtmjtrf6`).then(({data}) => {
       this.times = data
       this.carregando = false
     })
