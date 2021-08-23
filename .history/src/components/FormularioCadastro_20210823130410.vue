@@ -29,11 +29,7 @@ export default {
     timeprop:Object,
     salvarprop:Function
   },
-  data: ()=> {
-    return{
-      estados:['SP','RJ']
-    }
-  }
+  data
 
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <CampoDropDown nome="estado" v-model="time.estado" :itens="estados"></CampoDropDown>
+    <CampoDropDown v></CampoDropDown>
     <Campo v-bind:tipocampo="'text'" nome="nome" v-model="timeprop.nome"></Campo>
     <Campo v-bind:tipocampo="'text'" nome="estado" v-model="timeprop.estado"></Campo>
     <Campo v-bind:tipocampo="'text'" nome="tecnico" v-model="timeprop.tecnico"></Campo>
@@ -29,11 +29,6 @@ export default {
     timeprop:Object,
     salvarprop:Function
   },
-  data: ()=> {
-    return{
-      estados:['SP','RJ']
-    }
-  }
 
 }
 </script>

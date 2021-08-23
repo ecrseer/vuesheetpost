@@ -4,8 +4,7 @@
     <label v-bind:for="nomecampo" class="form-label"></label>
     <select v-bind:id="nomecampo"
         class="form-select" @input="$emit('update:modelValue', $event.target.value)">
-      <option v-for="estado in estados" v-bind:key="estado.nome"
-       :value="estado.nome"
+      <option v-for="estado in estados" key="" :value="estado.nome"
               v-on:click="setDropDownNoTexto($event.target.value)"
       >{{ estado }}</option>
     </select>

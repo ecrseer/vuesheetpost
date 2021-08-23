@@ -1,6 +1,6 @@
 <template>
   <section>
-    <CampoDropDown nome="estado" v-model="time.estado" :itens="estados"></CampoDropDown>
+
     <Campo v-bind:tipocampo="'text'" nome="nome" v-model="timeprop.nome"></Campo>
     <Campo v-bind:tipocampo="'text'" nome="estado" v-model="timeprop.estado"></Campo>
     <Campo v-bind:tipocampo="'text'" nome="tecnico" v-model="timeprop.tecnico"></Campo>
@@ -20,20 +20,14 @@
 import Campo from "../components/Campo.vue";
 import CampoSelect from "../components/CampoSelect.vue";
 import CampoTextArea from "../components/CampoTextArea.vue";
-import CampoDropDown from "../components/CampoDropDown.vue";
 
 export default {
   name: "FormularioCadastro",
-  components:{Campo, CampoTextArea, CampoSelect, CampoDropDown},
+  components:{Campo, CampoTextArea, CampoSelect, Campo},
   props:{
     timeprop:Object,
     salvarprop:Function
   },
-  data: ()=> {
-    return{
-      estados:['SP','RJ']
-    }
-  }
 
 }
 </script>

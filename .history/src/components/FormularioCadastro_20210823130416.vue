@@ -30,9 +30,7 @@ export default {
     salvarprop:Function
   },
   data: ()=> {
-    return{
-      estados:['SP','RJ']
-    }
+    return
   }
 
 }
