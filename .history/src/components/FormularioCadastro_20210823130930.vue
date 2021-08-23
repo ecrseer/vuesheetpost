@@ -8,10 +8,7 @@
     <Campo v-bind:tipocampo="'number'" nome="torcida" v-model="timeprop.torcida"></Campo>
     <Campo v-bind:tipocampo="'number'" nome="fundacao" v-model="timeprop.fundacao_ano"></Campo>
     <CampoTextArea nome="info" v-model="timeprop.info"></CampoTextArea>
- <CampoSelect
-        nomecampo="estadoD"
-        v-model="timeprop.estado"
-    ></CampoSelect>
+ 
     <v-btn block  color="secondary" v-on:click="salvarprop">salvar</v-btn>
   </section>
 </template>
