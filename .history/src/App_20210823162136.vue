@@ -1,8 +1,6 @@
 <template>
-  <main class="container">
-    <h3>Times</h3>
-    <div class="row">
-      <div class="col">
+  <h3>Times</h3>
+  <div>
     <!-- <table>
       <thead>
       <tr>
@@ -37,23 +35,19 @@
   </div>
 
 
-      <div class="col">
+  <div>
 
-        <Campo nome="nome" v-model="time.nome"></Campo>
-        <CampoDropDown nome="estado" v-model="time.estado" 
-        :itens="estados"></CampoDropDown>
-        <Campo nome="tecnico" v-model="time.tecnico"></Campo>
-        <Campo nome="torcida" tipo="number" v-model="time.torcida"></Campo>
-        <Campo nome="fundacao" tipo="number" v-model="time.fundacao_ano"></Campo>
-        <CampoText tipo="texto" nome="info" v-model="time.info"></CampoText>
+    <Campo nome="nome" v-model="time.nome"></Campo>
+    <CampoDropDown nome="estado" v-model="time.estado" 
+    :itens="estados"></CampoDropDown>
+    <Campo nome="tecnico" v-model="time.tecnico"></Campo>
+    <Campo nome="torcida" tipo="number" v-model="time.torcida"></Campo>
+    <Campo nome="fundacao" tipo="number" v-model="time.fundacao_ano"></Campo>
+    <CampoText tipo="texto" nome="info" v-model="time.info"></CampoText>
 
-        <span v-if="carregando">carregando...</span>
-        <button
-        class="btn btn-success"
-        v-else @click="salvar">salvar</button>
-      </div>
-    </div>
-  </main>
+    <span v-if="carregando">carregando...</span>
+    <button v-else @click="salvar">salvar</button>
+  </div>
 
 </template>
 
@@ -129,8 +123,6 @@ export default {
       }
     },
     apagar(time, index) {
-      console.log(time)
-      console.log(index)
       this.carregando = true
       axios.delete(`https://sheetdb.io/api/v1/${import.meta.env.VITE_TABELA_GJ}/id/${time.id}`).then(() => {
         this.times.splice(index, 1)

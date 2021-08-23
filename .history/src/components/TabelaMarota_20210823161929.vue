@@ -1,5 +1,5 @@
 <template>
-  <table class="table table-hover table-responsive-lg" v-bind:class="table-hover">
+  <table class="table table-hover" v-bind:class="table-hover">
     
     <thead>
       
@@ -28,7 +28,7 @@
           v-if="carregando">carregando</div>
           <button v-else 
           class="btn btn-danger"
-          @click="handleItemSelecionado('deletar',[time, index])">apagar</button>
+          @click="handleItemSelecionado('apagar',[time, index])">apagar</button>
         </td>
     </tr>
     </tbody>
@@ -49,15 +49,9 @@ export default {
           this.$emit('edicao',params)
         }
         if(acao==='apagar'){
-          this.$emit('deletar',...params)
+          this.$emit('edicao',params)
         }
     }
   }
 }
 </script>
-
-<style scoped>
-table{
-  max-width: 200px;
-}
-</style>

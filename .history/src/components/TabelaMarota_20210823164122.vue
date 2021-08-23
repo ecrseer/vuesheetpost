@@ -1,5 +1,5 @@
 <template>
-  <table class="table table-hover table-responsive-lg" v-bind:class="table-hover">
+  <table class="table table-hover table-responsive" v-bind:class="table-hover">
     
     <thead>
       
@@ -55,9 +55,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-table{
-  max-width: 200px;
-}
-</style>

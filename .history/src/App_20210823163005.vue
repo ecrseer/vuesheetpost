@@ -1,8 +1,8 @@
 <template>
   <main class="container">
     <h3>Times</h3>
-    <div class="row">
-      <div class="col">
+    <section>
+      <div class="col-sm">
     <!-- <table>
       <thead>
       <tr>
@@ -37,7 +37,7 @@
   </div>
 
 
-      <div class="col">
+      <div class="col-sm">
 
         <Campo nome="nome" v-model="time.nome"></Campo>
         <CampoDropDown nome="estado" v-model="time.estado" 
@@ -52,7 +52,7 @@
         class="btn btn-success"
         v-else @click="salvar">salvar</button>
       </div>
-    </div>
+    </section>
   </main>
 
 </template>

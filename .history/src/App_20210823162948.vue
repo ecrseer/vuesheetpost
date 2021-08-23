@@ -1,58 +1,7 @@
 <template>
   <main class="container">
     <h3>Times</h3>
-    <div class="row">
-      <div class="col">
-    <!-- <table>
-      <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Estado</th>
-        <th>Torcida</th>
-        <th>Ano</th>
-        <th>info</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(time, index) in times" v-bind:key="index">
-        <td>{{ time.nome }}</td>
-        <td>{{ time.estado }}</td>
-        <td>{{ time.torcida }}</td>
-        <td>{{ time.fundacao_ano }}</td>
-        <td>{{ time.info }}</td>
-        <td>
-          <button @click="editar(time)">editar</button>
-        </td>
-        <td>
-          <span v-if="carregando">carregando</span>
-          <button v-else @click="apagar(time, index)">apagar</button>
-        </td>
-      </tr>
-      </tbody>
-    </table> -->
-    <TabelaMarota v-bind:lista="times"
-    v-on:edicao="editar"
-    v-on:deletar="apagar"
-    ></TabelaMarota>
-  </div>
-
-
-      <div class="col">
-
-        <Campo nome="nome" v-model="time.nome"></Campo>
-        <CampoDropDown nome="estado" v-model="time.estado" 
-        :itens="estados"></CampoDropDown>
-        <Campo nome="tecnico" v-model="time.tecnico"></Campo>
-        <Campo nome="torcida" tipo="number" v-model="time.torcida"></Campo>
-        <Campo nome="fundacao" tipo="number" v-model="time.fundacao_ano"></Campo>
-        <CampoText tipo="texto" nome="info" v-model="time.info"></CampoText>
-
-        <span v-if="carregando">carregando...</span>
-        <button
-        class="btn btn-success"
-        v-else @click="salvar">salvar</button>
-      </div>
-    </div>
+    section
   </main>
 
 </template>

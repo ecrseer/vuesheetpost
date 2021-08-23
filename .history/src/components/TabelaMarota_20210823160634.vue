@@ -1,5 +1,5 @@
 <template>
-  <table class="table table-hover table-responsive-lg" v-bind:class="table-hover">
+  <table class="table table-hover" v-bind:class="table-hover">
     
     <thead>
       
@@ -7,8 +7,7 @@
       <th  scope="col"
       v-for="(atributo,key) in lista[0]" v-bind:key="key">
         {{ key }}</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
+
     </tr>
     </thead>
     <tbody>
@@ -19,8 +18,9 @@
       <!-- iterou por todos atributos de um item só -->
        <td>
           <button
-          class="btn btn-primary"
-           @click="handleItemSelecionado('edicao',item)">editar</button>
+          
+          class="btn btn-danger"
+           @click="$emit('editar',item)">editar</button>
         </td>
         <td>
           <div 
@@ -28,7 +28,7 @@
           v-if="carregando">carregando</div>
           <button v-else 
           class="btn btn-danger"
-          @click="handleItemSelecionado('deletar',[time, index])">apagar</button>
+          @click="$emit('apagar',[time, index])">apagar</button>
         </td>
     </tr>
     </tbody>
@@ -42,22 +42,6 @@
 <script>
 export default {
   name: 'TabelaMarota',
-  props:['lista'],
-  methods:{
-    handleItemSelecionado(acao,params){
-        if(acao==='edicao'){
-          this.$emit('edicao',params)
-        }
-        if(acao==='apagar'){
-          this.$emit('deletar',...params)
-        }
-    }
-  }
+  props:['lista']
 }
 </script>
-
-<style scoped>
-table{
-  max-width: 200px;
-}
-</style>

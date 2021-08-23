@@ -57,7 +57,5 @@ export default {
 </script>
 
 <style scoped>
-table{
-  max-width: 200px;
-}
+table{ defineProps}
 </style>
