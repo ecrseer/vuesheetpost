@@ -1,20 +1,21 @@
 <template>
   <div class="col-12">
     <label :for="nome" class="form-label">{{ nome }}</label>
-    <input :type="tipo"
-     class="form-control"
-     :id="nome"
-     :placeholder="nome"
-     :value="modelValue"
-     @input="$emit('update:modelValue', $event.target.value)">
+    <textarea
+      class="form-control"
+      :id="nome"
+      :placeholder="nome"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)">
+    </textarea>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Campo',
+  name: 'CampoText',
   emits: ['update:modelValue'],
-  props: ['nome', 'modelValue', 'tipo'],
+  props: ['nome', 'modelValue'],
   methods: {
     atualizar() {
       this.$emit('bombom')
