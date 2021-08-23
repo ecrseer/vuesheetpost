@@ -11,7 +11,7 @@
  <CampoSelect
         nomecampo="estadoD"
         v-model="timeprop.estado"
-        v-bind:estados="estados"
+        v-bind:estados=""
     ></CampoSelect>
     <v-btn block  color="secondary" v-on:click="salvarprop">salvar</v-btn>
   </section>

@@ -5,7 +5,7 @@
     <select v-bind:id="nomecampo"
         class="form-select" 
         @input="$emit('update:modelValue', $event.target.value)">
-      <option v-for="estado in estados" v-bind:key="estado"
+      <option v-for="estado in estados" v-bind:key="estado.nome"
        :value="estado"
              
       >{{ estado }}</option>
