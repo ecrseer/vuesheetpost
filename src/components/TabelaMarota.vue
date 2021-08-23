@@ -1,5 +1,5 @@
 <template>
-  <table class="table table-hover table-responsive-lg" v-bind:class="table-hover">
+  <table class="table table-hover table-responsive-lg"  >
     
     <thead>
       
