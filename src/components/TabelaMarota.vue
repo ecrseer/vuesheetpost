@@ -28,28 +28,26 @@
           v-if="carregando">carregando</div>
           <button v-else 
           class="btn btn-danger"
-          @click="handleItemSelecionado('deletar',[time, index])">apagar</button>
+          @click="handleItemSelecionado('deletar',{time, index})">apagar</button>
         </td>
     </tr>
     </tbody>
   </table>
   <!--
-    as funcoes editar/apagar deveriam estar aqui?
-     estado DropDown nao carrega ao editar no outro proj
    -->
 </template>
 
 <script>
 export default {
   name: 'TabelaMarota',
-  props:['lista'],
+  props:['lista','carregando'],
   methods:{
     handleItemSelecionado(acao,params){
         if(acao==='edicao'){
           this.$emit('edicao',params)
         }
         if(acao==='apagar'){
-          this.$emit('deletar',...params)
+          this.$emit('deletar',params)
         }
     }
   }

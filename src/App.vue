@@ -33,6 +33,7 @@
     <TabelaMarota v-bind:lista="times"
     v-on:edicao="editar"
     v-on:deletar="apagar"
+    v-bind:carregando="carregando"
     ></TabelaMarota>
   </div>
 
@@ -128,7 +129,7 @@ export default {
         })
       }
     },
-    apagar(time, index) {
+    apagar({time, index}) {
       console.log(time)
       console.log(index)
       this.carregando = true
