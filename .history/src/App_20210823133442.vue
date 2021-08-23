@@ -12,7 +12,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="(time, index) in times" v-bind:key="index">
+      <tr v-for="(time, index) in times">
         <td>{{ time.nome }}</td>
         <td>{{ time.estado }}</td>
         <td>{{ time.torcida }}</td>
@@ -140,7 +140,6 @@ export default {
 </script>
 
 <style>
-@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
-
-
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+body{}
 </style>

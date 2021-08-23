@@ -1,10 +1,8 @@
 <template>
-  <table v-bind:class="table table-hover" >
-    <h1>aa</h1>
+  <table class="table table-hover">
     <thead>
-      
     <tr >
-      <th  scope="col"
+      <th 
       v-for="(atributo,key) in lista[0]" v-bind:key="key">
         {{ key }}</th>
 

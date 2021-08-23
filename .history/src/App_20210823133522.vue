@@ -12,7 +12,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="(time, index) in times" v-bind:key="index">
+      <tr v-for="(time, index) in times">
         <td>{{ time.nome }}</td>
         <td>{{ time.estado }}</td>
         <td>{{ time.torcida }}</td>
