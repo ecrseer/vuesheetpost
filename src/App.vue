@@ -1,7 +1,7 @@
 <template>
   <h3>Times</h3>
   <Tabela @apagar="apagar" :carregando="carregando" @editar="editar"/>
-  <Formulario :carregando="carregando" :estados="estados" @salvar="salvar" :time="time"/>
+  <Formulario/>
 </template>
 
 <script>
@@ -25,14 +25,7 @@ export default {
   components: {Tabela, Formulario},
   data() {
     return {
-      time: timeNovo(),
-      carregando: true,
-      editando: false,
-      estados: [
-        'RJ',
-        'SP',
-        'RS',
-      ]
+      oldtime: timeNovo(), 
     }
   },
   computed: {
@@ -66,12 +59,14 @@ export default {
     },
     apagar({time, index}) {
       this.carregando = true
-      axios.delete(`https://sheetdb.io/api/v1/cuyfdc2x1vwf4/id/${time.id}`).then(() => {
+      axios.delete(`https://sheetdb.io/api/v1/cuyfdc2x1vwf4/id/${time.id}`)
+      .then(() => {
         this.times.splice(index, 1)
         this.carregando = false
       })
     },
     editar(time) {
+
       this.editando = time
       this.time = {...time}
     }

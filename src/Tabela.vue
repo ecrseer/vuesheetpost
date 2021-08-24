@@ -11,18 +11,20 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="(time, index) in times">
+      <tr v-for="(time, index) in times" v-bind:key="time">
         <td>{{ time.nome }}</td>
         <td>{{ time.estado }}</td>
         <td>{{ time.torcida }}</td>
         <td>{{ time.fundacao_ano }}</td>
         <td>{{ time.info }}</td>
         <td>
-          <button class="colorido" @click="$emit('editar', time)">editar</button>
+          <button class="colorido" 
+          @click="$emit('editar', time)">editar</button>
         </td>
         <td>
           <span v-if="carregando">carregando</span>
-          <button v-else @click="$emit('apagar', {time, index})">apagar</button>
+          <button v-else @click="$emit('apagar', {time, index})"
+          >apagar</button>
         </td>
       </tr>
       </tbody>

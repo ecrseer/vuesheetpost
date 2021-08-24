@@ -13,6 +13,7 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import Campo from './components/Campo.vue'
 import CampoDropDown from './components/CampoDropDown.vue'
 import CampoText from './components/CampoText.vue'
@@ -22,15 +23,14 @@ import CampoText from './components/CampoText.vue'
 export default {
   name: 'Formulario',
   components: {Campo, CampoDropDown, CampoText},
-  props: {
-    carregando: {},
-    estados: {},
-    time: {}
+  computed:{
+    ...mapState(['time']),
+    ...mapState(['estados']),
+    ...mapState(['carregando'])
   },
   methods: {
     salvar(){
       this.$emit('salvar', this.time)
-
     }
   }
   ,
