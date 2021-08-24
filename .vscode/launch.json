@@ -5,13 +5,22 @@
         "type": "pwa-chrome",
         "request": "launch",
         "name": "vuejs: chrome",
-        "url": "http://localhost:3000",
+        "url": "http://localhost:3000/",
         "webRoot": "${workspaceFolder}/src",
         "breakOnLoad": true,
         "sourceMapPathOverrides": {
           "webpack:///src/*": "${webRoot}/*"
         },
         "runtimeExecutable": "/usr/lib/chromium-browser/chromium-browser"
-      } 
+      } ,
+      {
+        "type": "node", 
+        "name": "Attach Node.js",
+            "processId": "${command:PickProcess}",
+            "request": "attach",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+      }
     ]
   }

@@ -9,13 +9,15 @@
     <CampoText tipo="texto" nome="info" v-model="time.info"></CampoText>
 
     <span v-if="carregando">carregando...</span>
-    <button v-else @click="salvar">salvar</button>
+    <button v-else @click="salvar">salvar</button> 
   </div>
 </template>
 <script>
 import Campo from './components/Campo.vue'
 import CampoDropDown from './components/CampoDropDown.vue'
 import CampoText from './components/CampoText.vue'
+
+
 
 export default {
   name: 'Formulario',
@@ -30,6 +32,10 @@ export default {
       this.$emit('salvar', this.time)
 
     }
+  }
+  ,
+  mounted(){
+    console.log('d')
   }
 }
 </script>
