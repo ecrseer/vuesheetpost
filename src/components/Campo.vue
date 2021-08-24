@@ -1,6 +1,6 @@
 <template>
   <div class="col-12">
-    <label :for="nome" class="form-label">{{ nome }}</label>
+    <label :for="nome" class="form-label colorido" >{{ nome }}</label>
     <input :type="tipo"
      class="form-control"
      :id="nome"
@@ -24,5 +24,9 @@ export default {
 </script>
 
 <style scoped>
+
+.colorido {
+  background-color: #0dcaf0;
+}
 
 </style>

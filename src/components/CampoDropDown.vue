@@ -1,6 +1,6 @@
 <template>
-  <div class="col-12"> 
-    <label :for="nome" class="form-label">{{ nome }}</label>
+  <div class="col-12">
+    <label :for="nome"  class="form-label">{{ nome }}</label>
     <select
       class="form-control"
       :id="nome"

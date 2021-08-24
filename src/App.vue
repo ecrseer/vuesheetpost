@@ -1,83 +1,13 @@
 <template>
-  <main class="container">
-    <h3>Times</h3>
-    <div class="row">
-      <div class="col">
-    <!-- <table>
-      <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Estado</th>
-        <th>Torcida</th>
-        <th>Ano</th>
-        <th>info</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(time, index) in times" v-bind:key="index">
-        <td>{{ time.nome }}</td>
-        <td>{{ time.estado }}</td>
-        <td>{{ time.torcida }}</td>
-        <td>{{ time.fundacao_ano }}</td>
-        <td>{{ time.info }}</td>
-        <td>
-          <button @click="editar(time)">editar</button>
-        </td>
-        <td>
-          <span v-if="carregando">carregando</span>
-          <button v-else @click="apagar(time, index)">apagar</button>
-        </td>
-      </tr>
-      </tbody>
-    </table> -->
-    <TabelaMarota v-bind:lista="times"
-    v-on:edicao="editar"
-    v-on:deletar="apagar"
-    v-bind:carregando="carregando"
-    ></TabelaMarota>
-  </div>
-
-
-      <div class="col">
-
-        <Campo nome="nome" v-model="time.nome"></Campo>
-        <CampoDropDown nome="estado" v-model="time.estado" 
-        :itens="estados"></CampoDropDown>
-        <Campo nome="tecnico" v-model="time.tecnico"></Campo>
-        <Campo nome="torcida" tipo="number" v-model="time.torcida"></Campo>
-        <Campo nome="fundacao" tipo="number" v-model="time.fundacao_ano"></Campo>
-        <CampoText tipo="texto" nome="info" v-model="time.info"></CampoText>
-
-        <div v-if="carregando"
-          class="alert alert-primary">carregando...</div>
-        <button
-        class="btn btn-success"
-        v-else @click="salvar">salvar</button>
-      </div>
-    </div>
-  </main>
-
+  <h3>Times</h3>
+  <Tabela @apagar="apagar" :carregando="carregando" @editar="editar"/>
+  <Formulario :carregando="carregando" :estados="estados" @salvar="salvar" :time="time"/>
 </template>
 
-
 <script>
-// todo:
-// atualizar lista superior
-// limpar campos depois de salvar
-// estados como drop-down
-// torcida tem q ser do tipo number
-// fundacao do tipo number
-// info tem q ser um textarea
-
-// transformar a listagem de times em uma tabela
-// excluir
-// editar um time
-
-import Campo from './components/Campo.vue'
 import axios from 'axios'
-import CampoDropDown from './components/CampoDropDown.vue'
-import CampoText from './components/CampoText.vue'
-import TabelaMarota from './components/TabelaMarota.vue'
+import Formulario from './Formulario.vue'
+import Tabela from './Tabela.vue'
 
 let timeNovo = () => {
   return {
@@ -92,11 +22,10 @@ let timeNovo = () => {
 }
 
 export default {
-  components: {TabelaMarota, CampoText, CampoDropDown, Campo},
+  components: {Tabela, Formulario},
   data() {
     return {
       time: timeNovo(),
-      times: [],
       carregando: true,
       editando: false,
       estados: [
@@ -106,37 +35,38 @@ export default {
       ]
     }
   },
+  computed: {
+    times(){
+      return this.$store.state.times
+    }
+  },
   methods: {
-    salvar() {
+    salvar(time) {
       this.carregando = true
       if (this.editando) {
         axios.put(
-            `https://sheetdb.io/api/v1/${import.meta.env.VITE_TABELA_GJ}/id/${this.time.id}`,
-            {data: [this.time]}
+            `https://sheetdb.io/api/v1/cuyfdc2x1vwf4/id/${time.id}`,
+            {data: [time]}
         ).then(() => {
-          Object.assign(this.editando, this.time)
+          Object.assign(this.editando, time)
           this.time = timeNovo()
           this.carregando = false
           this.editando = false
         })
       } else {
         axios.post(
-            `https://sheetdb.io/api/v1/${import.meta.env.VITE_TABELA_GJ}`,
-            {data: [this.time]}
+            'https://sheetdb.io/api/v1/cuyfdc2x1vwf4',
+            {data: [time]}
         ).then(() => {
-          this.times.push(this.time)
+          this.times.push(time)
           this.time = timeNovo()
           this.carregando = false
         })
       }
     },
-    apagar(objt) {
-      console.log(objt)
-      let {time, index} = objt;
-      console.log(time)
-      console.log(index)
+    apagar({time, index}) {
       this.carregando = true
-      axios.delete(`https://sheetdb.io/api/v1/${import.meta.env.VITE_TABELA_GJ}/id/${time.id}`).then(() => {
+      axios.delete(`https://sheetdb.io/api/v1/cuyfdc2x1vwf4/id/${time.id}`).then(() => {
         this.times.splice(index, 1)
         this.carregando = false
       })
@@ -147,17 +77,8 @@ export default {
     }
   },
   mounted() {
-    this.carregando = true
-    axios.get(`https://sheetdb.io/api/v1/${import.meta.env.VITE_TABELA_GJ}`).then(({data}) => {
-      this.times = data
-      this.carregando = false
-    })
+    this.$store.dispatch('carregar')
   }
 }
 </script>
 
-<style>
-@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
-
-
-</style>
