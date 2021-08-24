@@ -43,11 +43,14 @@ export default {
   props:['lista','carregando'],
   methods:{
     handleItemSelecionado(acao,params){
+      this.carregando=true;
         if(acao==='edicao'){
           this.$emit('edicao',params)
         }
-        if(acao==='apagar'){
+        if(acao==='deletar'){
+          
           this.$emit('deletar',params)
+          
         }
     }
   }

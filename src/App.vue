@@ -48,7 +48,8 @@
         <Campo nome="fundacao" tipo="number" v-model="time.fundacao_ano"></Campo>
         <CampoText tipo="texto" nome="info" v-model="time.info"></CampoText>
 
-        <span v-if="carregando">carregando...</span>
+        <div v-if="carregando"
+          class="alert alert-primary">carregando...</div>
         <button
         class="btn btn-success"
         v-else @click="salvar">salvar</button>
@@ -129,7 +130,9 @@ export default {
         })
       }
     },
-    apagar({time, index}) {
+    apagar(objt) {
+      console.log(objt)
+      let {time, index} = objt;
       console.log(time)
       console.log(index)
       this.carregando = true
