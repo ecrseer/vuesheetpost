@@ -30,7 +30,11 @@ export default {
   },
   methods: {
     salvar(){
-      this.$emit('salvar', this.time)
+      this.$store.dispatch('salvarTime',{time})
+    },
+    editar(time){
+      this.$store.dispatch('editarTime',{time})
+      
     }
   }
   ,

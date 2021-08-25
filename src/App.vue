@@ -65,8 +65,7 @@ export default {
         this.carregando = false
       })
     },
-    editar(time) {
-
+    editar(time) { 
       this.editando = time
       this.time = {...time}
     }
